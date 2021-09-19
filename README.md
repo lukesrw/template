@@ -6,6 +6,7 @@ Use this template through the [GitHub "Use this template"](https://github.com/lu
 set project=my-new-project
 git clone --depth=1 https://github.com/lukesrw/template.git %project%
 rmdir /S /Q %project%\.git
+git init %project%
 
 ```
 
@@ -19,16 +20,6 @@ rmdir /S /Q %project%\.git
 
 ```
 node tools/init <feature1> <feature2> ...
-```
-
-## Clean
-
--   Uninstalls the "Packages (local)" listed below
--   Deletes the "Compile Folder"
--   Deletes the "Init Folder"
-
-```
-node tools/clean <feature1> <feature2> ...
 ```
 
 ## Build
@@ -50,14 +41,14 @@ build();
 
 # Features
 
-| Feature           | Init Folder                                                                 | Compile Folder                    | Packages (global)                                                                                                                                       | Packages (local)                                                                                        |
-| ----------------- | --------------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| TypeScript ("ts") | [ts](https://github.com/lukesrw/full-template/tree/master/ts)               | js                                | [`typescript`](https://www.npmjs.com/package/typescript)                                                                                                | [`@types/node`](https://www.npmjs.com/package/@types/node)                                              |
-| Vue               | [vue](https://github.com/lukesrw/full-template/tree/master/vue)             | dist                              | [`@vue/cli-service`](https://www.npmjs.com/package/@vue/cli-service)<br/>[`vue-template-compiler`](https://www.npmjs.com/package/vue-template-compiler) | [`vue`](https://www.npmjs.com/package/vue)<br/>[`vue-router`](https://www.npmjs.com/package/vue-router) |
-| Scss              | [scss](https://github.com/lukesrw/full-template/tree/master/scss)           | dist/css/scss<br/>public/css/scss | [`sass`](https://www.npmjs.com/package/sass)                                                                                                            |                                                                                                         |
-| Prettier          | [prettier](https://github.com/lukesrw/full-template/tree/master/prettier)\* |                                   |                                                                                                                                                         |                                                                                                         |
-| Eslint            | [eslint](https://github.com/lukesrw/full-template/tree/master/eslint)\*     |                                   |                                                                                                                                                         |                                                                                                         |
-| Git               | [git](https://github.com/lukesrw/full-template/tree/master/git)\*           |                                   |                                                                                                                                                         |                                                                                                         |
-| Node              | node_modules                                                                |                                   |                                                                                                                                                         |                                                                                                         |
+| Feature           | Init Folder                                                                 | Compile Folder                    | Packages (global)                                                                                                                                       | Packages (local)                                                                                                                                                                                               |
+| ----------------- | --------------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TypeScript ("ts") | [ts](https://github.com/lukesrw/full-template/tree/master/ts)               | js                                | [`typescript`](https://www.npmjs.com/package/typescript)                                                                                                | [`@types/node`](https://www.npmjs.com/package/@types/node)                                                                                                                                                     |
+| Vue               | [vue](https://github.com/lukesrw/full-template/tree/master/vue)             | dist                              | [`@vue/cli-service`](https://www.npmjs.com/package/@vue/cli-service)<br/>[`vue-template-compiler`](https://www.npmjs.com/package/vue-template-compiler) | [`vue`](https://www.npmjs.com/package/vue)<br/>[`vue-router`](https://www.npmjs.com/package/vue-router)                                                                                                        |
+| Scss              | [scss](https://github.com/lukesrw/full-template/tree/master/scss)           | dist/css/scss<br/>public/css/scss | [`sass`](https://www.npmjs.com/package/sass)                                                                                                            |                                                                                                                                                                                                                |
+| Prettier          | [prettier](https://github.com/lukesrw/full-template/tree/master/prettier)\* |                                   |                                                                                                                                                         |                                                                                                                                                                                                                |
+| Eslint            | [eslint](https://github.com/lukesrw/full-template/tree/master/eslint)\*     |                                   |                                                                                                                                                         |                                                                                                                                                                                                                |
+| Git               | [git](https://github.com/lukesrw/full-template/tree/master/git)\*           |                                   |                                                                                                                                                         |
+| Electron          | [electron](https://github.com/lukesrw/full-template/tree/master/electron)\* | js                                |                                                                                                                                                         | [`electron`](https://www.npmjs.com/package/electron)<br/>[`@electron-forge/cli`](https://www.npmjs.com/package/@electron-forge/cli)<br/>[`electron-settings`](https://www.npmjs.com/package/electron-settings) |
 
 \*files cloned into root without folder
