@@ -20,11 +20,11 @@ module.exports = async () => {
         );
     }
 
-    names.forEach(async name => {
-        switch (name) {
+    for (let i = 0; i < names.length; i += 1) {
+        switch (names[i]) {
             case "clone":
                 await exec(
-                    'xcopy /E /I /Y . ..\\template && cd ..\\template && rmdir /S /Q eslint git prettier scss ts vue electron && git add -A && git commit -m "Full Template updates" && git push'
+                    'rmdir /S /Q ..\\template\\tools && xcopy /E /I /Y . ..\\template && cd ..\\template && rmdir /S /Q eslint git prettier scss ts vue electron && git add -A && git commit -m "Full Template updates" && git push'
                 );
                 break;
 
@@ -51,9 +51,9 @@ module.exports = async () => {
                 );
 
             default:
-                await exec(`move full-template\\${name}\\* .`);
+                await exec(`move full-template\\${names[i]}\\* .`);
         }
-    });
+    }
 
     await exec("rmdir /S /Q full-template");
 };
